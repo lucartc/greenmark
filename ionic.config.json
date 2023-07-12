@@ -1,0 +1,7 @@
+{
+  "name": "greenmark-v6",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

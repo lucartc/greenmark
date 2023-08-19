@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="150"
+   height="108.59108"
+   viewBox="0 0 39.687499 28.73139"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (1:1.2.2+202212051551+b0a8486541)"
+   sodipodi:docname="greenmark_notification_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.9902471"
+     inkscape:cx="-100.9849"
+     inkscape:cy="66.145107"
+     inkscape:window-width="1920"
+     inkscape:window-height="952"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g30716" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-93.2307,-121.75053)">
+    <g
+       id="g30668"
+       transform="translate(-1463.5,-432.87147)" />
+    <g
+       id="g30716"
+       transform="translate(-1687.5779,-525.70423)">
+      <path
+         style="fill:#54e431;fill-opacity:1;stroke-width:0.076445"
+         d="m 1780.8086,657.10324 9.61,19.08291 30.0775,-28.73139 -26.878,17.68767 -6.299,-11.04373 z"
+         id="path30690" />
+    </g>
+  </g>
+</svg>

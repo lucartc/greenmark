@@ -12,6 +12,10 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    'no-self-assign': 'off',
+    'no-case-declarations': 'off',
+    'vue/valid-v-for': 'off',
+    'vue/multi-word-component-names': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-deprecated-slot-attribute': 'off',

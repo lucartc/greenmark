@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">greenmark</string>
+    <string name="title_activity_main">greenmark</string>
+    <string name="package_name">tech.jlucartc.greenmark</string>
+    <string name="custom_url_scheme">tech.jlucartc.greenmark</string>
+</resources>

@@ -58,19 +58,19 @@
   <PageTemplate ref="page">
     <MenuCard menu="settings"></MenuCard>
     <div class="w-full min-w-full max-w-full flex flex-col gap-2">
-      <div @click="go_to_tasks" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-secondary items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
+      <div @click="go_to_tasks" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-menu-item items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
         <img class="h-[20px] min-h-[20px] max-h-[20px] aspect-square" :src="'tasks.svg'">
         <div class="flex flex-col">
             <label class="text-md">Tasks</label>
         </div>
       </div>
-      <div @click="go_to_tutorial" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-secondary items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
+      <div @click="go_to_tutorial" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-menu-item items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
         <img class="h-[20px] min-h-[20px] max-h-[20px] aspect-square" :src="'tutorial.svg'">
         <div class="flex flex-col">
             <label class="text-md">See tutorial</label>
         </div>
       </div>
-      <div @click="export_data" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-secondary items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
+      <div @click="export_data" class="flex flex-row gap-6 w-full min-w-full max-w-full bg-menu-item items-center rounded-lg drop-shadow-lg px-6 py-4 box-border text-white">
         <img class="h-[20px] min-h-[20px] max-h-[20px] aspect-square" :src="'data.svg'">
         <div class="flex flex-col">
             <label class="text-md">Export data</label>

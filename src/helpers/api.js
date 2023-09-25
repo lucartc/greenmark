@@ -306,7 +306,7 @@ function get_tutorial_pages(){
     return [
         {
             title: 'Types of goals',
-            media: '/tutorial_1.png',
+            media: '/tutorial_1.jpg',
             type: 'image',
             text: "<p>Abstract goals represent wide scope objectives, which can't be executed immedially, in a direct manner, since they depend and are formed by many minor tasks.</p><br><p>Executable tasks are closed scope objectives, that can be attained immediatelly and can generally be measured in an objective manner. They are the true bulding blocks of any objective, big or small.</p>",
         },

@@ -104,7 +104,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col gap-6 p-6 box-border w-[80%] min-w-[80%] max-w-[80%] max-h-[80%] bg-secondary absolute rounded-lg drop-shadow-lg overflow-y-auto">
+    <div class="flex flex-col gap-6 p-6 box-border w-[80%] min-w-[80%] max-w-[80%] max-h-[80%] bg-menu-item absolute rounded-lg drop-shadow-lg overflow-y-auto">
         <label class="text-white text-2xl font-bold">Edit goal</label>
         <div class="flex flex-row flex-wrap text-white gap-4">
             <div class="w-full min-w-full max-w-full flex flex-col gap-1">

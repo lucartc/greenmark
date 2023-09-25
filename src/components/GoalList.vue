@@ -64,6 +64,10 @@
             case 'Complete':
                 return results.filter(res => res.status == 'COMPLETE')
                        .concat(results.filter(res => res.status != 'COMPLETE'))
+            case 'Nearest deadline':
+                return results.sort((a,b) => (b.deadline ? b.deadline : -Infinity) - (a.deadline ? a.deadline : -Infinity))
+            case 'Farthest deadline':
+                return results.sort((a,b) => (a.deadline ? a.deadline : Infinity) - (b.deadline ? b.deadline : Infinity))
             default:
                 return results
         }
@@ -123,30 +127,32 @@
         <div class="flex flex-row w-full min-w-full max-w-full gap-3">
             <div class="flex flex-col gap-1">
                 <label class="text-xs">Sort by</label>
-                <select v-model="goal_order" class="bg-transparent">
-                    <option class="text-black text-sm" value="Name">Name</option>
-                    <option class="text-black text-sm" value="Latest">Latest</option>
-                    <option class="text-black text-sm" value="Oldest">Oldest</option>
-                    <option class="text-black text-sm" value="Updated">Updated</option>
-                    <option class="text-black text-sm" value="Incomplete">Incomplete</option>
-                    <option class="text-black text-sm" value="Complete">Complete</option>
+                <select v-model="goal_order" class="text-[0.7rem] bg-transparent caret-pink-500">
+                    <option class="text-black text-[0.6rem]" value="Name">Name</option>
+                    <option class="text-black text-[0.6rem]" value="Latest">Latest</option>
+                    <option class="text-black text-[0.6rem]" value="Oldest">Oldest</option>
+                    <option class="text-black text-[0.6rem]" value="Updated">Updated</option>
+                    <option class="text-black text-[0.6rem]" value="Incomplete">Incomplete</option>
+                    <option class="text-black text-[0.6rem]" value="Complete">Complete</option>
+                    <option class="text-black text-[0.6rem]" value="Nearest deadline">Nearest deadlines</option>
+                    <option class="text-black text-[0.6rem]" value="Farthest deadline">Farthest deadline</option>
                 </select>
             </div>
             <div class="flex flex-col gap-1">
                 <label class="text-xs">Show only</label>
-                <select v-model="goal_filter" class="bg-transparent">
-                    <option class="text-black text-sm" value="">All</option>
-                    <option class="text-black text-sm" value="IN_PROGRESS">In progress</option>
-                    <option class="text-black text-sm" value="PAUSED">Paused</option>
-                    <option class="text-black text-sm" value="ABSTRACT">Abstract</option>
-                    <option class="text-black text-sm" value="EXECUTABLE">Executable</option>
-                    <option value="Incomplete" class="text-black text-sm">Incomplete</option>
-                    <option value="Complete" class="text-black text-sm">Complete</option>
+                <select v-model="goal_filter" class="text-[0.7rem] bg-transparent">
+                    <option class="text-black text-[0.6rem]" value="">All</option>
+                    <option class="text-black text-[0.6rem]" value="IN_PROGRESS">In progress</option>
+                    <option class="text-black text-[0.6rem]" value="PAUSED">Paused</option>
+                    <option class="text-black text-[0.6rem]" value="ABSTRACT">Abstract</option>
+                    <option class="text-black text-[0.6rem]" value="EXECUTABLE">Executable</option>
+                    <option class="text-black text-[0.6rem]" value="Incomplete">Incomplete</option>
+                    <option class="text-black text-[0.6rem]" value="Complete">Complete</option>
                 </select>
             </div>
             <div class="flex flex-row gap-2 ml-auto items-center">
-                <input v-model="goal_search" class="text-black w-[80px] min-w-[80px] max-w-[80px] bg-gray-200 rounded-lg py-1 p-2 text-sm drop-shadow-lg" type="text">
-                <img class="h-[20px] h-[20px] h-[20px] aspect-square" :src="'search.svg'">
+                <input v-model="goal_search" class="text-black w-[60px] min-w-[60px] max-w-[60px] bg-gray-200 rounded-lg py-1 p-2 text-sm drop-shadow-lg" type="text">
+                <img class="ml-2 h-[20px] h-[20px] h-[20px] aspect-square" :src="'search.svg'">
             </div>
         </div>
         <div class="flex flex-col gap-4">

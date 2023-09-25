@@ -13,7 +13,8 @@ const config: CapacitorConfig = {
       "iconColor": "#54e431",
     },
     SplashScreen: {
-      androidSplashResourceName: "greenmark_splash",
+      androidSplashResourceName: "greenmark_illustration",
+      launchShowDuration: 2000,
       androidScaleType: "FIT_XY"
     }
   }

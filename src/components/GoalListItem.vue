@@ -64,6 +64,17 @@
         }
     })
 
+    function get_deadline_date(){
+        return (new Date(props.deadline))
+                .toLocaleString('en-us',{
+                    day: '2-digit',
+                    month: 'short',
+                    hourCycle: 'h24',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+    }
+
     function is_abstract(){
         return props.goal_type == 'ABSTRACT'
     }
@@ -231,6 +242,7 @@
     ])
 
     onMounted(() => {
+        console.log('Goal: ',props)
         get_goals({id: props.id})
         .then(data => { subgoals.value = data; console.log(data) })
         .catch(err => console.log('Error',err))
@@ -239,7 +251,7 @@
 
 <template>
     <div ref="self" class="flex flex-row p-4 gap-4 w-full min-w-full justify-between max-w-full bg-secondary items-start rounded-lg drop-shadow-lg box-border relative">
-        <div class="flex flex-col grow gap-2">
+        <div class="flex flex-col grow gap-2 max-w-[70%]">
             <div class="flex flex-row gap-4 items-center">
                 <img class="h-[25px] min-h-[25px] max-h-[25px] aspect-square" :src="get_goal_icon">
                 <div @click="go_to_item_page" class="flex flex-col max-w-[70%] gap-4">
@@ -253,16 +265,17 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row">
+            <div class="flex flex-row gap-3">
                 <div class="flex flex-row gap-2 items-center">
                     <img v-if="is_paused()" :src="'paused.svg'" :class="[get_status_color]">
                     <img v-if="is_in_progress()" :src="'in_progress.svg'" :class="[get_status_color]">
                     <img v-if="is_complete()" :src="'complete.svg'" :class="[get_status_color]">
                     <label :class="['text-xs','text-[#f0f0f0]']">{{ status }}</label>
                 </div>
+                <label v-if="deadline" class="text-xs">Ends at {{ get_deadline_date() }}</label>
             </div>
         </div>
-        <div class="flex flex-col justify-between items-end min-h-full max-h-full">
+        <div class="flex flex-col justify-between items-end min-h-full max-h-full max-w-[30%]">
             <div class="flex flex-row justify-center">
                 <img ref="menu" @click="toggle_options" class="mr-0 ml-2 h-[20px] min-h-[20px] max-h-[20px]" :src="'dots_vertical.svg'">
                 <div ref="options" v-if="show_options" class="flex flex-col top-full right-0 absolute bg-primary text-white rounded-b-lg">
@@ -274,8 +287,8 @@
                 </div>
             </div>
             <div class="flex flex-row gap-2">
-                <button v-if="!is_abstract()" ref="increment_button" @click="increment_goal" class="bg-blue-500 w-[30px] min-w-[30px] max-w-[30px] h-[30px] min-h-[30px] max-h-[30px] flex flex-row justify-center items-center box-border rounded-[100%] text-2xl font-bold">+</button>
-                <button v-if="!is_abstract()" ref="decrement_button" @click="decrement_goal" class="bg-blue-500 w-[30px] min-w-[30px] max-w-[30px] h-[30px] min-h-[30px] max-h-[30px] flex flex-row justify-center items-center box-border rounded-[100%] text-2xl font-bold">-</button>
+                <button v-if="!is_abstract()" ref="increment_button" @click="increment_goal" class="bg-accent-3 text-gray-800 w-[30px] min-w-[30px] max-w-[30px] h-[30px] min-h-[30px] max-h-[30px] flex flex-row justify-center items-center box-border rounded-[100%] text-2xl font-bold">+</button>
+                <button v-if="!is_abstract()" ref="decrement_button" @click="decrement_goal" class="bg-accent-3 text-gray-800 w-[30px] min-w-[30px] max-w-[30px] h-[30px] min-h-[30px] max-h-[30px] flex flex-row justify-center items-center box-border rounded-[100%] text-2xl font-bold">-</button>
             </div>
         </div>
     </div>
@@ -294,7 +307,7 @@
     <dialog v-if="show_confirm_complete_dialog" ref="confirm_complete_dialog" class="top-0 flex flex-col h-full items-center justify-center min-h-full max-h-full w-full min-w-full max-w-full bg-[#0b2428a0] z-[1]">
         <div class="flex flex-col gap-6 rounded-lg bg-secondary w-[80%] p-10 box-border">
             <div class="flex flex-col gap-2 text-white w-full min-w-full max-w-full">
-                <label class="text-2xl font-bold">Complete goal</label>
+                <label class="text-2xl font-bold">Finish goal</label>
                 <p class="leading-6">Are you sure you want to complete "{{ props.name }}"?</p>
             </div>
             <div class="w-full min-w-full max-w-full flex flex-row gap-4 text-white">

@@ -190,7 +190,7 @@
 </script>
 
 <template>
-    <div ref="self" class="flex flex-col w-full min-w-full max-w-full bg-secondary rounded-b-lg p-8 py-6 box-border gap-2 text-white z-[1]">
+    <div ref="self" class="flex flex-col w-full min-w-full max-w-full bg-card bg-cover bg-blend-hard-light bg-[0px_-50px] rounded-b-lg p-8 py-6 box-border gap-2 text-white z-[1]">
         <div class="flex flex-col gap-4">
             <div class="flex flex-row w-full min-w-full max-w-full justify-between relative">
                 <label @click="go_back" class="text-lg">{{ parent_goal ? '< '+parent_goal.name : '< Back' }}</label>
@@ -211,8 +211,8 @@
             {{ goal?.description }}
         </p>
         <div class="flex flex-row gap-2">
-            <button @click="try_complete_goal" v-if="can_be_completed()" class="mt-auto w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg">Complete goal</button>
-            <button @click="show_create_goal_dialog" v-if="can_be_edited()" class="mt-auto w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg">New +</button>
+            <button @click="try_complete_goal" v-if="can_be_completed()" class="mt-auto w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg text-xs">Finish goal</button>
+            <button @click="show_create_goal_dialog" v-if="can_be_edited()" class="mt-auto w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg text-xs">New +</button>
         </div>
         <div class="flex flex-row gap-[15px] flex-wrap mt-4">
             <div class="flex flex-row gap-1 items-center">
@@ -239,7 +239,7 @@
         <dialog v-if="show_confirm_complete_dialog" ref="confirm_complete_dialog" class="top-0 flex flex-col h-full items-center justify-center min-h-full max-h-full w-full min-w-full max-w-full bg-[#0b2428a0]">
             <div class="flex flex-col gap-6 rounded-lg bg-secondary w-[80%] p-10 box-border">
                 <div class="flex flex-col gap-2 text-white w-full min-w-full max-w-full">
-                    <label class="text-2xl font-bold">Complete goal</label>
+                    <label class="text-2xl font-bold">Finish goal</label>
                     <p class="leading-6">Are you sure you want to complete "{{ goal?.name }}"?</p>
                 </div>
                 <div class="w-full min-w-full max-w-full flex flex-row gap-4 text-white">

@@ -36,7 +36,7 @@
     <PageTemplate ref="page">
         <MenuCard menu="tasks"></MenuCard>
         <div class="flex flex-col w-full min-w-full max-w-full gap-2 text-white">
-          <div class="p-4 bg-secondary rounded-lg drop-shadow-lg flex flex-col w-full min-w-full max-w-full">
+          <div class="p-4 bg-menu-item rounded-lg drop-shadow-lg flex flex-col w-full min-w-full max-w-full">
             <label class="text-lg">Default task order</label>
             <select @change="change_default_order" v-model="order" class="bg-transparent w-fit text-gray-300">
               <option value="Name" class="text-black text-sm">Name</option>
@@ -45,9 +45,11 @@
               <option value="Updated" class="text-black text-sm">Updated</option>
               <option value="Incomplete" class="text-black text-sm">Incomplete</option>
               <option value="Complete" class="text-black text-sm">Complete</option>
+              <option value="Nearest deadline" class="text-black text-sm">Nearest deadlines</option>
+              <option value="Farthest deadline" class="text-black text-sm">Farthest deadline</option>
             </select>
           </div>
-          <div class="p-4 bg-secondary rounded-lg drop-shadow-lg flex flex-col w-full min-w-full max-w-full">
+          <div class="p-4 bg-menu-item rounded-lg drop-shadow-lg flex flex-col w-full min-w-full max-w-full">
             <label class="text-lg">Default task filter</label>
             <select @change="change_default_filter" v-model="filter" class="bg-transparent w-fit text-gray-300">
               <option value="" class="text-black text-sm">All</option>

@@ -43,13 +43,13 @@
 </script>
 
 <template>
-        <div class="flex flex-col w-full min-w-full max-w-full bg-secondary rounded-b-lg p-8 py-8 box-border gap-4 text-white drop-shadow-lg">
+        <div class="flex flex-col w-full min-w-full max-w-full bg-card bg-cover bg-blend-hard-light bg-[0px_-50px] rounded-b-lg p-8 py-8 box-border gap-4 text-white drop-shadow-lg">
             <div class="flex flex-col gap-6">
                 <div class="flex flex-row gap-3 items-center">
                     <img class="h-[20px] min-h-[20px] max-h-[20px]" :src="'home.svg'">
-                    <label class="text-lg h-fit">Welcome home!</label>
+                    <label class="text-sm h-fit">Welcome home!</label>
                     <div class="ml-auto flex flex-row">
-                        <button @click="show_create_goal_dialog" class="mt-auto font-bold w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg">New +</button>
+                        <button @click="show_create_goal_dialog" class="mt-auto w-full bg-pink-500 rounded-lg flex flex-row justify-center items-center px-4 py-2 drop-shadow-lg text-xs">New +</button>
                     </div>
                 </div>
                 <div class="flex flex-col gap-1">

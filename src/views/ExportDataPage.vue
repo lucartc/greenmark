@@ -16,7 +16,7 @@ import { onIonViewDidEnter } from '@ionic/vue'
     get_records()
     .then(data => {
         return Filesystem.writeFile({
-          path: 'greemark_records.json',
+          path: 'greenmark_records.json',
           data: data,
           directory: Directory.Documents,
           encoding: Encoding.UTF8
@@ -50,7 +50,7 @@ import { onIonViewDidEnter } from '@ionic/vue'
     <PageTemplate ref="page">
         <MenuCard menu="export_data"></MenuCard>
         <div class="flex flex-col w-full">
-          <button @click="export_file" class="flex flex-row text-xl text-white font-bold w-full min-w-full max-w-full bg-secondary justify-center items-center rounded-lg drop-shadow-lg px-6 py-4 box-border">
+          <button @click="export_file" class="flex flex-row text-xl text-white font-bold w-full min-w-full max-w-full bg-menu-item justify-center items-center rounded-lg drop-shadow-lg px-6 py-4 box-border">
             Export data
           </button>
         </div>
